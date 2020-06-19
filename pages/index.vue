@@ -32,7 +32,7 @@
               </span>
             </p>
           </div>
-          <n-link class="panel-block is-active" v-for="(key, link) in links" :to="link.path" :key="key">
+          <n-link class="panel-block is-active" v-for="(link, key) in links" :to="link.path" :key="key">
             {{link.name | name}}
           </n-link>
         </nav>
