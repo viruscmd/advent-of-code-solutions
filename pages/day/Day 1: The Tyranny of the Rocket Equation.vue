@@ -1,21 +1,28 @@
 <template>
   <section class="section">
-    <div class="columns is-multiline">
+    <div class="columns is-desktop is-multiline">
       <div class="column is-full">
-        <h1 class="title">Day 1: The Tyranny of the Rocket Equation</h1>
+        <h1 class="subtitle has-text-grey-light">Day 1</h1>
+        <h2 class="title">The Tyranny of the Rocket Equation</h2>
       </div>
-      <div class="column is-half">
+      <div class="column is-8-desktop">
         <b-field label="Source Data">
           <b-input type="textarea" v-model="inputData"></b-input>
         </b-field>
 
-        <b-field label="Answer 1">
-          <b-input type="number" v-model="partOne"></b-input>
-        </b-field>
+        <div class="columns is-touch">
+          <div class="column is-half">
+            <b-field label="Answer 1">
+              <b-input type="number" v-model="partOne"></b-input>
+            </b-field>
+          </div>
 
-        <b-field label="Answer 2">
-          <b-input type="number" v-model="partTwo"></b-input>
-        </b-field>
+          <div class="column is-half">
+            <b-field label="Answer 2">
+              <b-input type="number" v-model="partTwo"></b-input>
+            </b-field>
+          </div>
+        </div>
       </div>
 
       <div class="column">
@@ -25,7 +32,7 @@
 
         <b-field>
           <p class="control">
-            <b-button @click="inputData = srcData" type="is-primary">Use Source Data</b-button>
+            <b-button @click="inputData = srcData" type="is-primary" expanded>Use Source Data</b-button>
           </p>
         </b-field>
       </div>
@@ -36,7 +43,7 @@
 <script>
   export default {
     name: 'Day1',
-    data () {
+    data() {
       return {
         inputData: '',
         srcData: '112908\n' +
@@ -142,14 +149,14 @@
       }
     },
     computed: {
-      partOne () {
+      partOne() {
         return !!this.inputData ? this.inputData.split('\n').map(x => Math.floor(x / 3) - 2).reduce((a, b) => a + b, 0) : 0
       },
-      partTwo () {
+      partTwo() {
         return !!this.inputData ? this.inputData.split('\n').map(x => {
           let fuel = (y) => {
             let required = Math.floor(y / 3) - 2;
-            return (required >= 0) ? required  + fuel(required) : 0
+            return (required >= 0) ? required + fuel(required) : 0
           };
 
           return fuel(x)
