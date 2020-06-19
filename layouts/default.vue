@@ -10,11 +10,11 @@
           Home
         </a>
 
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
+<!--        <div class="navbar-burger">-->
+<!--          <span />-->
+<!--          <span />-->
+<!--          <span />-->
+<!--        </div>-->
       </div>
     </nav>
 
