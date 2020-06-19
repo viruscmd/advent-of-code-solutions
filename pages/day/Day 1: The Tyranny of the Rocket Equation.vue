@@ -2,9 +2,11 @@
   <section class="section">
     <div class="columns is-desktop is-multiline">
       <div class="column is-full">
-        <h1 class="subtitle has-text-grey-light">Day 1</h1>
-        <h2 class="title">The Tyranny of the Rocket Equation</h2>
+        <ChallengeTitle title="The Tyranny of the Rocket Equation"
+                        subtitle="Day 1"
+                        link="https://adventofcode.com/2019/day/1"/>
       </div>
+
       <div class="column is-8-desktop">
         <b-field label="Source Data">
           <b-input type="textarea" v-model="inputData"></b-input>
@@ -41,8 +43,12 @@
 </template>
 
 <script>
+  import ChallengeTitle from '~/components/ChallengeTitle';
   export default {
     name: 'Day1',
+    components: {
+      ChallengeTitle
+    },
     data() {
       return {
         inputData: '',
