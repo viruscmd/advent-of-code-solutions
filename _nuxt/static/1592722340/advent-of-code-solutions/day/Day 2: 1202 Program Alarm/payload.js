@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/advent-of-code-solutions/day/Day 2: 1202 Program Alarm", {data:[],fetch:[],mutations:void 0});
